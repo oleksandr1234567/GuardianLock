@@ -1,9 +1,62 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
+  <ion-toolbar color="primary">
+      <ion-buttons slot="end">
+          <ion-button (click)="logout()">
+            <ion-icon slot="icon-only" name="ios-power"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    <ion-title class="medium">
+      {{userEmail}}'s <br>
+      Song list
     </ion-title>
   </ion-toolbar>
 </ion-header>
+ 
+<ion-content>
+ 
+  <ion-list>
+ 
+    <ng-container *ngIf="!todos || todos.length == 0">
+      <div *ngFor="let n of [0,1,2]" padding>
+        <ion-skeleton-text></ion-skeleton-text>
+        <p>
+          <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+        </p>
+      </div>
+    </ng-container>
 
-<ion-content></ion-content>
+
+
+   
+   
+    <ion-item-sliding *ngFor="let item of todos">
+      <ion-item lines="inset" button [routerLink]="['/details', item.id]">
+        <ion-label>
+          {{ item.Song }}
+          
+          <ion-label class="larger" color="primary">
+              {{ item.Artist }}
+              <p class="smaller">{{ item.createdAt | date:'short' }}</p>
+            </ion-label>
+        </ion-label>
+        <ion-note slot="end" color="primary">{{ item.Rating }}</ion-note>
+      </ion-item>
+ 
+      <ion-item-options side="end">
+        <ion-buttons slot="end">
+          <ion-button (click)="remove(item)">
+            <ion-icon color="danger" slot="icon-only" name="ios-trash"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item-options>
+    </ion-item-sliding>
+ 
+  </ion-list>
+ 
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button routerLink="/details" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+ 
+</ion-content>

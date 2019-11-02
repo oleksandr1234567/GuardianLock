@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab2"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add new song</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content class="ion-padding">
+   
+    <ion-row>
+      <ion-col size="12" size-sm="10" offset-sm="1" size-md="8" offset-md="2" size-lg="6" offset-lg="3" size-xl="4"
+        offset-xl="4">
+        <ion-card>
+        <ion-card-content >
+            <img src="/assets/home2.gif" alt="" />
+  <ion-list lines="full">
+    <ion-item>
+      <ion-input required type="text" placeholder="Song" [(ngModel)]="todo.Song"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input required type="text" placeholder="Artist" [(ngModel)]="todo.Artist"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-input required type="number" placeholder="Rating" [(ngModel)]="todo.Rating"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" (click)="saveTodo()">Save</ion-button>
+
+</ion-card-content>
+</ion-card>
+
+</ion-col>
+</ion-row>
+
+
+</ion-content>

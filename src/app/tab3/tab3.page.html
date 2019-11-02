@@ -1,9 +1,45 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content></ion-content>
+    <ion-toolbar color="primary">    
+  <ion-buttons slot="end">
+    <ion-button (click)="logout()">
+      <ion-icon slot="icon-only" name="ios-power"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  
+      <ion-title>
+        About
+        
+      </ion-title>
+    </ion-toolbar>
+    
+   
+  
+  </ion-header>
+  
+  <ion-content>
+      <ion-card class="welcome-card">
+        <img src="/assets/home2.gif" alt="" />
+        <ion-card-header>
+          <ion-card-subtitle class="ion-text-center">{{userEmail}}</ion-card-subtitle>
+          <ion-card-subtitle class="ion-text-center"><a (click)="logout()" class="smaller">Not you?</a></ion-card-subtitle>
+          <ion-card-title class="ion-text-center">uMusic</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="ion-text-center">
+          <p>We are a premium song list service helping you to store favourite tracks and help you build the best playlist ever!<br><br>
+          Your list is stored personally and you can easily add your new songs, with the date added and a rating<br><br>
+        Whether you would like to store your ratings in a mood or standard rating... That is totally up to you!<br><br>
+      </p>
+        </ion-card-content>
+      </ion-card>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </ion-content>
+  
