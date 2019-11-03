@@ -1,3 +1,5 @@
+// Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 

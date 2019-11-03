@@ -1,3 +1,5 @@
+// Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341
+
 import { Component, OnInit } from '@angular/core';
 import { Todo, TodoService } from '../services/todo.service';
 import { AuthenticateService } from '../services/authentication.service';

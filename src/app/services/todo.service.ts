@@ -1,3 +1,5 @@
+// Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341
+
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
