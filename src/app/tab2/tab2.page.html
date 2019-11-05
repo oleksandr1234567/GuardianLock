@@ -9,7 +9,7 @@
         </ion-buttons>
     <ion-title class="medium">
       {{userEmail}}'s <br>
-      Song list
+      Recipes
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -33,11 +33,15 @@
    
     <ion-item-sliding *ngFor="let item of todos">
       <ion-item lines="inset" button [routerLink]="['/details', item.id]">
+
+
+
+        <ion-checkbox color="primary" checked slot="start"></ion-checkbox>
         <ion-label>
-          {{ item.Song }}
+          {{ item.Recipe }}
           
           <ion-label class="larger" color="primary">
-              {{ item.Artist }}
+              {{ item.Cookingtime }}
               <p class="smaller">{{ item.createdAt | date:'short' }}</p>
             </ion-label>
         </ion-label>
@@ -62,3 +66,5 @@
   </ion-fab>
  
 </ion-content>
+
+

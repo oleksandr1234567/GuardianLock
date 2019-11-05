@@ -4,6 +4,8 @@ import { Todo, TodoService } from './../../services/todo.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController, LoadingController } from '@ionic/angular';
+import { getRandomString } from 'selenium-webdriver/safari';
+import { validateEventsArray } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-todo-details',
@@ -12,10 +14,25 @@ import { NavController, LoadingController } from '@ionic/angular';
 })
 export class TodoDetailsPage implements OnInit {
 
+  public form = [
+    { val: 'Favourite', isChecked: true }
+  ];
+
   todo: Todo = {
-    Song: '',
+    Recipe: '',
+    Cookingtime: null,
+    Ingredients: '',
+    Instructions: '',
+    Instructions2: '',
+    Instructions3: '',
+    Instructions4: '',
+    Instructions5: '',
+    Instructions6: '',
+    Instructions7: '',
+    Instructions8: '',
+    Rating: null,
     createdAt: new Date().getTime(),
-    Artist: '',
+
   };
 
   todoId = null;
@@ -24,7 +41,7 @@ export class TodoDetailsPage implements OnInit {
               private todoService: TodoService, private loadingController: LoadingController) { }
 
   ngOnInit() {
-    this.todoId = this.route.snapshot.params['id'];
+    this.todoId = this.route.snapshot.params.id;
     if (this.todoId)  {
       this.loadTodo();
     }
@@ -52,12 +69,12 @@ export class TodoDetailsPage implements OnInit {
     if (this.todoId) {
       this.todoService.updateTodo(this.todo, this.todoId).then(() => {
         loading.dismiss();
-        this.nav.back('tab2');
+        this.nav.navigateBack('tab2');
       });
     } else {
       this.todoService.addTodo(this.todo).then(() => {
         loading.dismiss();
-        this.nav.back('tab2');
+        this.nav.navigateBack('tab2');
       });
     }
   }

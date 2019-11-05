@@ -15,7 +15,8 @@
       </ion-title>
     </ion-toolbar>
     
-   
+
+
   
   </ion-header>
   
@@ -32,11 +33,30 @@
           Your list is stored personally and you can easily add your new songs, with the date added and a rating<br><br>
         Whether you would like to store your ratings in a mood or standard rating... That is totally up to you!<br><br>
       </p>
+
+
+
+      
         </ion-card-content>
       </ion-card>
   
-  
-  
+      <p id="demo"></p>
+
+      <div class="wrapper">
+        <div class="pie spinner"></div>
+        <div class="pie filler"></div>
+        <div class="mask"></div>
+      </div>
+
+
+  <ion-footer>
+<ion-row class="ion-justify-content-center">
+    <h1>{{ time | async }}</h1>
+</ion-row>
+
+      <ion-button *ngIf="state === 'stop'" expand="block" color="primary" (click)="startTimer(startDuration)">START</ion-button>  
+    <ion-button *ngIf="state === 'start'" expand="block" color="danger" (click)="stopTimer()">STOP</ion-button>
+  </ion-footer>
   
   
   

@@ -14,7 +14,7 @@
           <ion-card>
               <ion-card-header>
                 <ion-card-title class="ion-text-center">Register</ion-card-title>
-                <img src="/assets/music.jpg" alt="" />
+                <img src="/assets/apple.png" alt="" />
               </ion-card-header>
               <ion-card-content>
   <form class="form" [formGroup]="validations_form"  (ngSubmit)="tryRegister(validations_form.value)">
@@ -44,7 +44,7 @@
     </div>
  
     
-    <ion-button expand="block" class="submit-btn" type="submit"  [disabled]="!validations_form.valid">Register</ion-button>
+    <ion-button expand="block" class="submit-btn" type="submit"  [disabled]="!validations_form.valid" (click)="goLoginPage()">Register</ion-button>
     <label class="error-message">{{errorMessage}}</label>
     <label class="success-message">{{successMessage}}</label>
   </form>

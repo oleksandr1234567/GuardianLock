@@ -11,7 +11,9 @@ import { NavController, ModalController } from '@ionic/angular';
   styleUrls: ['tab2.page.scss'],
 })
 export class Tab2Page implements OnInit {
-
+  public form = [
+    { val: 'Favourite', isChecked: true }
+  ];
   userEmail: string;
 
   todos: Todo[];

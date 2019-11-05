@@ -7,10 +7,22 @@ import { map } from 'rxjs/operators';
 
 export interface Todo {
   id?: string;
-  Song: string;
-  Artist: string;
+  Recipe: string;
+  Cookingtime: number;
+  Ingredients: string;
+  Instructions: string;
+  Instructions2: string;
+  Instructions3: string;
+  Instructions4: string;
+  Instructions5: string;
+  Instructions6: string;
+  Instructions7: string;
+  Instructions8: string;
+
   Rating: number;
   createdAt: number;
+
+
 }
 
 @Injectable({

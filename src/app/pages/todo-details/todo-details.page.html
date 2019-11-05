@@ -5,7 +5,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tab2"></ion-back-button>
     </ion-buttons>
-    <ion-title>Add new song</ion-title>
+    <ion-title>Add new Recipe</ion-title>
   </ion-toolbar>
 </ion-header>
  
@@ -15,19 +15,57 @@
       <ion-col size="12" size-sm="10" offset-sm="1" size-md="8" offset-md="2" size-lg="6" offset-lg="3" size-xl="4"
         offset-xl="4">
         <ion-card>
-        <ion-card-content >
-            <img src="/assets/home2.gif" alt="" />
+        <ion-card-content>
   <ion-list lines="full">
     <ion-item>
-      <ion-input required type="text" placeholder="Song" [(ngModel)]="todo.Song"></ion-input>
+      <ion-input required type="text" placeholder="Recipe" [(ngModel)]="todo.Recipe"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-input required type="text" placeholder="Artist" [(ngModel)]="todo.Artist"></ion-input>
+        <ion-input required type="HH:mm" placeholder="Cooking time" [(ngModel)]="todo.Cookingtime"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea required type="text" placeholder="Ingredients" [(ngModel)]="todo.Ingredients"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-textarea required type="text" placeholder="Step 1:" [(ngModel)]="todo.Instructions"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-textarea required type="text" placeholder="Step 2:" [(ngModel)]="todo.Instructions2"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-textarea required type="text" placeholder="Step 3:" [(ngModel)]="todo.Instructions3"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-textarea required type="text" placeholder="Step 4:" [(ngModel)]="todo.Instructions4"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-textarea required type="text" placeholder="Step 5:" [(ngModel)]="todo.Instructions5"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-textarea required type="text" placeholder="Step 6:" [(ngModel)]="todo.Instructions6"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-textarea required type="text" placeholder="Step 7:" [(ngModel)]="todo.Instructions7"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-textarea required type="text" placeholder="Step 8:" [(ngModel)]="todo.Instructions8"></ion-textarea>
       </ion-item>
     <ion-item>
       <ion-input required type="number" placeholder="Rating" [(ngModel)]="todo.Rating"></ion-input>
     </ion-item>
+
+
+    
+    <ion-item *ngFor="let entry of form">
+        <ion-label>{{entry.val}}</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+      </ion-item>
+
+
+
   </ion-list>
+
+  
   <ion-button expand="block" (click)="saveTodo()">Save</ion-button>
 
 </ion-card-content>
@@ -35,6 +73,5 @@
 
 </ion-col>
 </ion-row>
-
 
 </ion-content>
