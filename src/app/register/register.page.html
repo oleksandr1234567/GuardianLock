@@ -1,4 +1,4 @@
-<!-- Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341-->
+<!-- Oleksandr Zakirov 1802341-->
 
 <ion-header>
   <ion-toolbar color="primary">
@@ -13,8 +13,8 @@
 
           <ion-card>
               <ion-card-header>
-                <ion-card-title class="ion-text-center">Register</ion-card-title>
-                <img src="/assets/apple.png" alt="" />
+                <ion-card-title class="ion-text-center">Create an account</ion-card-title> <br>
+                <img  src="https://media.licdn.com/dms/image/C560BAQEnYZHh3XuJCg/company-logo_200_200/0?e=2159024400&v=beta&t=21CgSnKEfIC8rscq8huVDIqHVxl_aPIQP_t7OVtkp58" class="cover" alt=""/>
               </ion-card-header>
               <ion-card-content>
   <form class="form" [formGroup]="validations_form"  (ngSubmit)="tryRegister(validations_form.value)">
@@ -48,6 +48,7 @@
     <label class="error-message">{{errorMessage}}</label>
     <label class="success-message">{{successMessage}}</label>
   </form>
+  <p class="small" class="ion-text-center">      or     </p> 
   <p class="go-to-login" class="ion-text-center"><a (click)="goLoginPage()">Log In</a></p>
               </ion-card-content>
             </ion-card>

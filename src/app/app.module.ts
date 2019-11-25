@@ -1,4 +1,4 @@
-// Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341
+// Oleksandr Zakirov 1802341
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';

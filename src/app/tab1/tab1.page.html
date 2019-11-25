@@ -1,43 +1,45 @@
-<!-- Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341-->
+<!-- Oleksandr Zakirov 1802341-->
 
 <ion-header>
-
   <ion-toolbar color="primary">    
-<ion-buttons slot="end">
-  <ion-button (click)="logout()">
-    <ion-icon slot="icon-only" name="ios-power"></ion-icon>
-  </ion-button>
-</ion-buttons>
-
-    <ion-title>
-      Home
-      
-    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="ios-power"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>      Home       </ion-title>
   </ion-toolbar>
-  
- 
-
-</ion-header>
+ </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <img src="/assets/pizza.png" alt="" />
-      <ion-card-header>
-        <ion-card-subtitle class="ion-text-center">{{userEmail}}</ion-card-subtitle>
+  <ion-card class="welcome-card">
+    <img  src="https://media.licdn.com/dms/image/C560BAQEnYZHh3XuJCg/company-logo_200_200/0?e=2159024400&v=beta&t=21CgSnKEfIC8rscq8huVDIqHVxl_aPIQP_t7OVtkp58" class="cover" alt=""/>
+   <!--Home page information -->
+    <ion-card-header>    
+      <ion-card-title class="ion-text-center">Welcome back to <br> GuardianLock</ion-card-title>
+    </ion-card-header>
+      
+    <ion-card-content class="ion-text-center">
+        <p>Hello {{userEmail}}!</p>
         <ion-card-subtitle class="ion-text-center"><a (click)="logout()" class="smaller">Not you?</a></ion-card-subtitle>
-        <ion-card-title class="ion-text-center">Welcome back to <br> uFoodie</ion-card-title>
-      </ion-card-header>
-      <ion-card-content class="ion-text-center">
-        <p>Now that you're here, we can continue to store your favourite tracks and help you build the best playlist ever!</p>
+        <br>
+        
+        <p>This is an app to help you to keep track of your passwords.</p>
+        <p>Do you strugle to remember your passwords? Do you have have a lot of accounts and you use
+        always the same password, because you're afraid to forget one?
+        Do you use weak passwords to not forget them?   </p>
+        <br>
+        <h2>GuardianLock is the solution!</h2><br>
+        <p>In GuardianLock you can easily save all your passwords and in a secure database.
+          This way you can always just come back and copy it. So there is no need to create weak passwords.
+          You can create complex and safe passwords and just save them in your GuardianLock, and then
+          come fetch them at any time!
+        </p> <br> <br>
+
+        <p>Watch this video to learn how to create a strong password.</p> <br>
+        <iframe  width="90%"  height="450px" src="https://www.youtube.com/embed/aEmF3Iylvr4"   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
       </ion-card-content>
     </ion-card>
-
-
-
-
-
-
-
-
 
 </ion-content>

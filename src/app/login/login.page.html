@@ -1,4 +1,4 @@
-<!-- Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341-->
+<!-- Oleksandr Zakirov 1802341-->
 
 <ion-header>
   <ion-toolbar color="primary">
@@ -7,30 +7,22 @@
 </ion-header>
  
 <ion-content padding>
+  <ion-row>
+  <ion-col size="12" size-sm="10" offset-sm="1" size-md="8" offset-md="2" size-lg="6" offset-lg="3" size-xl="4" offset-xl="4">
+    <ion-card class="welcome-card">
+      <ion-card-header>
+       <ion-card-title class="ion-text-center" class="larger">GuardianLock<br></ion-card-title>
+      </ion-card-header>
+         <img  src="https://media.licdn.com/dms/image/C560BAQEnYZHh3XuJCg/company-logo_200_200/0?e=2159024400&v=beta&t=21CgSnKEfIC8rscq8huVDIqHVxl_aPIQP_t7OVtkp58" class="cover" alt=""/>
 
-    <ion-row>
-        <ion-col size="12" size-sm="10" offset-sm="1" size-md="8" offset-md="2" size-lg="6" offset-lg="3" size-xl="4"
-          offset-xl="4">
-     
-          <ion-card class="welcome-card">
-            <ion-card-header>
-              <ion-card-title class="ion-text-center" class="larger">uFoodie<br></ion-card-title>
-            </ion-card-header>
+  <ion-card-content>
+    <form class="form" [formGroup]="validations_form"  (ngSubmit)="loginUser(validations_form.value)">
 
-                <img src="/assets/pizza.png" alt="" />
-
-            <ion-card-content>
-
-
-
-
-  <form class="form" [formGroup]="validations_form"  (ngSubmit)="loginUser(validations_form.value)">
- 
-    <ion-item>
-        <p class="medium">Your Account</p>
+    <ion-item>   
       <ion-label position="floating" color="primary">Email</ion-label>
       <ion-input color="primary" type="text" formControlName="email"></ion-input>
     </ion-item>
+    
     <div class="validation-errors">
       <ng-container *ngFor="let validation of validation_messages.email">
         <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
@@ -56,14 +48,13 @@
  
     <label class="error-message">{{errorMessage}}</label>
   </form>
+  <p class="small" class="ion-text-center">      or     </p> 
   <p class="go-to-register" class="ion-text-center">
-<a (click)="goToRegisterPage()">Create an account.</a>
+<a (click)="goToRegisterPage()">Create account</a>
   </p>
             </ion-card-content>
           </ion-card>
 
         </ion-col>
       </ion-row>
-
-
   </ion-content>

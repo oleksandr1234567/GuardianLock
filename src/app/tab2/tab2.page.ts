@@ -1,10 +1,11 @@
-// Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341
+// Oleksandr Zakirov 1802341
 
 import { Component, OnInit } from '@angular/core';
 import { Todo, TodoService } from '../services/todo.service';
 import { AuthenticateService } from '../services/authentication.service';
-import { NavController, ModalController } from '@ionic/angular';
 
+import { ActivatedRoute } from '@angular/router';
+import { NavController, LoadingController } from '@ionic/angular';
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -20,7 +21,8 @@ export class Tab2Page implements OnInit {
 
   constructor(private todoService: TodoService,
               private navCtrl: NavController,
-              private authService: AuthenticateService) {}
+              private authService: AuthenticateService,
+              private route: ActivatedRoute, private nav: NavController,) {}
 
   ngOnInit() {
     this.todoService.getTodos().subscribe(res => {
@@ -47,8 +49,12 @@ export class Tab2Page implements OnInit {
       this.todos = res;
     });
   }
-
+//delete button
   remove(item) {
-    this.todoService.removeTodo(item.id);
+    this.todoService.removeTodo(item.id).then(() => {
+      this.nav.navigateBack('tabs/tab2');
+    });
   }
+
+  
 }

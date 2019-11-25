@@ -1,67 +1,43 @@
-<!--// Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341-->
-
+<!--Oleksandr Zakirov 1802341-->
 <ion-header>
-
     <ion-toolbar color="primary">    
-  <ion-buttons slot="end">
-    <ion-button (click)="logout()">
-      <ion-icon slot="icon-only" name="ios-power"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  
-      <ion-title>
-        About
-        
-      </ion-title>
-    </ion-toolbar>
-    
+       <ion-buttons slot="end">
+        <ion-button (click)="logout()">
+          <ion-icon slot="icon-only" name="ios-power"></ion-icon>
+         </ion-button>
+        </ion-buttons>
+       <ion-title>       About      </ion-title>
+    </ion-toolbar> 
 
-
-  
   </ion-header>
-  
-  <ion-content>
+    <ion-content>
       <ion-card class="welcome-card">
-        <img src="/assets/home2.gif" alt="" />
+        <img src="https://lwchurch.org.uk/Images/content/2417/871231.jpg" alt="" />
         <ion-card-header>
-          <ion-card-subtitle class="ion-text-center">{{userEmail}}</ion-card-subtitle>
-          <ion-card-subtitle class="ion-text-center"><a (click)="logout()" class="smaller">Not you?</a></ion-card-subtitle>
-          <ion-card-title class="ion-text-center">uMusic</ion-card-title>
+          <ion-card-title class="ion-text-center">GuardiaLock</ion-card-title>
         </ion-card-header>
+
         <ion-card-content class="ion-text-center">
-          <p>We are a premium song list service helping you to store favourite tracks and help you build the best playlist ever!<br><br>
-          Your list is stored personally and you can easily add your new songs, with the date added and a rating<br><br>
-        Whether you would like to store your ratings in a mood or standard rating... That is totally up to you!<br><br>
-      </p>
+          <p>GuardiaLock is an aspiring password saving app. This was app was born as school project
+            for a bachelor degree, but it is being upgraded from time to time. <br>
 
+            The developer of this app is a Business Information Technology student, who aspires to be
+            a developer and this is one of his projects. <br><br><br>
 
+            This app has the following features:<br></p>  
+            <ul class="ion-text-left">
+              <li> Functional Login, Register and Logout pages </li>
+              <li> A welcome message in the Home page.</li>
+              <li> A Logo.</li>
+              <li> A tab icon for the browser view.</li>
+              <li> A database connection.</li>
+              <li> A list of passwords that the user can create.</li>
+              <li> Contacts and About page.</li>
+            </ul>
+          
 
-      
         </ion-card-content>
       </ion-card>
-  
-      <p id="demo"></p>
-
-      <div class="wrapper">
-        <div class="pie spinner"></div>
-        <div class="pie filler"></div>
-        <div class="mask"></div>
-      </div>
-
-
-  <ion-footer>
-<ion-row class="ion-justify-content-center">
-    <h1>{{ time | async }}</h1>
-</ion-row>
-
-      <ion-button *ngIf="state === 'stop'" expand="block" color="primary" (click)="startTimer(startDuration)">START</ion-button>  
-    <ion-button *ngIf="state === 'start'" expand="block" color="danger" (click)="stopTimer()">STOP</ion-button>
-  </ion-footer>
-  
-  
-  
-  
-  
   
   </ion-content>
   

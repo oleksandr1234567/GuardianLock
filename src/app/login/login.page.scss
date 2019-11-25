@@ -1,7 +1,7 @@
-// Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341
+//  Oleksandr Zakirov 1802341
 
   .larger {
-    font-size: 38px;
+    font-size: 250%;
     text-align: center;
   }
 
@@ -12,3 +12,11 @@
   .smaller {
     font-size: 12px;
   }
+
+  .cover{
+    width: 60%;
+    height:40%;
+    margin-left: auto;
+    margin-right: auto;
+   
+ }

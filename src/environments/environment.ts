@@ -1,4 +1,4 @@
-// Firebase details // Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341
+// Firebase details // Oleksandr Zakirov 1802341
 
 export const environment = {
   production: false,

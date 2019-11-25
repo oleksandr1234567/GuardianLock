@@ -1,4 +1,4 @@
-// Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341
+// Oleksandr Zakirov 1802341
 
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';

@@ -1,4 +1,4 @@
-// Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341
+// Oleksandr Zakirov 1802341
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,6 +12,8 @@ const routes: Routes = [
   { path: '', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)},
   { path: 'details/:id', loadChildren: './pages/todo-details/todo-details.module#TodoDetailsPageModule' },
   { path: 'details', loadChildren: './pages/todo-details/todo-details.module#TodoDetailsPageModule' },
+  { path: 'tab4', loadChildren: './tab4/tab4.module#Tab4PageModule' },
+
 ];
 
 @NgModule({

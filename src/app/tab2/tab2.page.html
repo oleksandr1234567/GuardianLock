@@ -1,4 +1,4 @@
-<!--// Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341-->
+<!--Oleksandr Zakirov 1802341-->
 
 <ion-header>
   <ion-toolbar color="primary">
@@ -7,58 +7,35 @@
             <ion-icon slot="icon-only" name="ios-power"></ion-icon>
           </ion-button>
         </ion-buttons>
-    <ion-title class="medium">
-      {{userEmail}}'s <br>
-      Recipes
-    </ion-title>
+    <ion-title >      My passwords    </ion-title>
   </ion-toolbar>
 </ion-header>
  
 <ion-content>
- 
-  <ion-list>
- 
-    <ng-container *ngIf="!todos || todos.length == 0">
-      <div *ngFor="let n of [0,1,2]" padding>
-        <ion-skeleton-text></ion-skeleton-text>
-        <p>
-          <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
-        </p>
-      </div>
-    </ng-container>
 
-
-
-   
-   
-    <ion-item-sliding *ngFor="let item of todos">
-      <ion-item lines="inset" button [routerLink]="['/details', item.id]">
-
-
-
-        <ion-checkbox color="primary" checked slot="start"></ion-checkbox>
-        <ion-label>
-          {{ item.Recipe }}
-          
-          <ion-label class="larger" color="primary">
-              {{ item.Cookingtime }}
+  <ion-list *ngFor="let item of todos"><!--Fetch from database-->
+    <p *ngIf="!todos || todos.length == 0" >&nbsp; You don't have any passwords saved yet.</p> <!--Message if database is empty-->
+    
+    <ion-item-sliding   >
+      <ion-item lines="inset" button [routerLink]="['/details', item.id]"><!--Rows-->
+        <ion-label class="larger">
+          {{ item.title }} <!--TITLE-->
+              <ion-label class="smaller" color="primary">
+                   {{ item.password }}<!--Password-->
               <p class="smaller">{{ item.createdAt | date:'short' }}</p>
             </ion-label>
         </ion-label>
-        <ion-note slot="end" color="primary">{{ item.Rating }}</ion-note>
-      </ion-item>
- 
-      <ion-item-options side="end">
+       <!--Delete button-->
         <ion-buttons slot="end">
           <ion-button (click)="remove(item)">
-            <ion-icon color="danger" slot="icon-only" name="ios-trash"></ion-icon>
+            <ion-icon color="danger" slot="icon-only" name="ios-trash"> </ion-icon>
           </ion-button>
-        </ion-buttons>
-      </ion-item-options>
-    </ion-item-sliding>
- 
+        </ion-buttons>    
+      </ion-item>    
+    </ion-item-sliding>    
+   
   </ion-list>
- 
+  <!--Add new registry button-->
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button routerLink="/details" routerDirection="forward">
       <ion-icon name="add"></ion-icon>
@@ -66,5 +43,4 @@
   </ion-fab>
  
 </ion-content>
-
 

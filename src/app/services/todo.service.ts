@@ -1,4 +1,4 @@
-// Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341
+// Oleksandr Zakirov 1802341
 
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
@@ -6,23 +6,11 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface Todo {
-  id?: string;
-  Recipe: string;
-  Cookingtime: number;
-  Ingredients: string;
-  Instructions: string;
-  Instructions2: string;
-  Instructions3: string;
-  Instructions4: string;
-  Instructions5: string;
-  Instructions6: string;
-  Instructions7: string;
-  Instructions8: string;
-
-  Rating: number;
-  createdAt: number;
-
-
+  // creates database fields
+id?: string;
+title: string;
+password: string;
+createdAt: number;
 }
 
 @Injectable({
@@ -50,19 +38,19 @@ export class TodoService {
   getTodos() {
     return this.todos;
   }
-
+//fetches from database
   getTodo(id) {
     return this.todosCollection.doc<Todo>(id).valueChanges();
   }
-
+// updates databes
   updateTodo(todo: Todo, id: string) {
     return this.todosCollection.doc(id).update(todo);
   }
-
+// add button
   addTodo(todo: Todo) {
     return this.todosCollection.add(todo);
   }
-
+// - delete button
   removeTodo(id) {
     return this.todosCollection.doc(id).delete();
   }

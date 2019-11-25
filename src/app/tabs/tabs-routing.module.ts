@@ -1,4 +1,4 @@
-// Kristofer McCormick 1803203 & Oleksandr Zakirov 1802341
+//  Oleksandr Zakirov 1802341
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,7 +10,7 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'home',
         children: [
           {
             path: '',
@@ -20,7 +20,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab2',
+        path: 'myperson',
         children: [
           {
             path: '',
@@ -30,12 +30,22 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab3',
+        path: 'about',
         children: [
           {
             path: '',
             loadChildren: () =>
               import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+          }
+        ]
+      },
+      {
+        path: 'contacts',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../tab4/tab4.module').then(m => m.Tab4PageModule)
           }
         ]
       },
@@ -51,14 +61,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];

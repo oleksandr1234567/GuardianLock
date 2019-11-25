@@ -1,4 +1,4 @@
-
+//Oleksandr Zakirov 1802341
 
 import { Todo, TodoService } from './../../services/todo.service';
 import { Component, OnInit } from '@angular/core';
@@ -19,22 +19,11 @@ export class TodoDetailsPage implements OnInit {
   ];
 
   todo: Todo = {
-    Recipe: '',
-    Cookingtime: null,
-    Ingredients: '',
-    Instructions: '',
-    Instructions2: '',
-    Instructions3: '',
-    Instructions4: '',
-    Instructions5: '',
-    Instructions6: '',
-    Instructions7: '',
-    Instructions8: '',
-    Rating: null,
-    createdAt: new Date().getTime(),
-
+  title: '', // title field
+  password: '', // password field
+  createdAt: new Date().getTime(),
   };
-
+  
   todoId = null;
 
   constructor(private route: ActivatedRoute, private nav: NavController,
@@ -69,12 +58,12 @@ export class TodoDetailsPage implements OnInit {
     if (this.todoId) {
       this.todoService.updateTodo(this.todo, this.todoId).then(() => {
         loading.dismiss();
-        this.nav.navigateBack('tab2');
+        this.nav.navigateBack('tabs/tab2');
       });
     } else {
       this.todoService.addTodo(this.todo).then(() => {
         loading.dismiss();
-        this.nav.navigateBack('tab2');
+        this.nav.navigateBack('tabs/tab2');
       });
     }
   }
